@@ -5,6 +5,21 @@
     <jsp:include page="/WEB-INF/partials/head.jsp">
         <jsp:param name="title" value="Viewing All The Ads"/>
     </jsp:include>
+    <style>
+        .ads {
+            background-color: lightgrey;
+        }
+
+        i {
+            background-color: lightgrey;
+        }
+
+        .editButtons {
+            background-color: lightgrey;
+            border: none;
+        }
+    </style>
+    <script src="https://kit.fontawesome.com/376cc6886e.js" crossorigin="anonymous"></script>
 </head>
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
@@ -21,6 +36,11 @@
                 <div class="card-body" onclick="handleClick(${ad.id})">
                     <h4 id="title-${ad.id}">${ad.title}</h4>
                     <p>${ad.description}</p>
+                    <p>Categories:
+                        <c:forEach var="cat" items="${ad.getCategories()}">
+                            ${cat},
+                        </c:forEach>
+                    </p>
                 </div>
             </div>
         </c:forEach>
@@ -41,3 +61,5 @@
 </script>
 </body>
 </html>
+<%-- this is for that drop down thing, needed to make sure it was possible. --%>
+<%-- <a href="/ads?attributeName=exampleValue&attributeValue=123">Click me</a> --%>
