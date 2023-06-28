@@ -10,6 +10,10 @@ public interface Ads {
     // insert a new ad and return the new ad's id
     Long insert(Ad ad);
 
+    List<Ad> findByAdTitle(String title);
+
+    List<Ad> findByUserId(Long userId);
+
     List<Ad> byCategory(String categoryName);
 
     void delete(Ad ad);
@@ -19,4 +23,5 @@ public interface Ads {
     void updateDescription(Ad ad, String newDescription);
 
     Ad fetchAdById(int id);
+
 }

@@ -28,11 +28,19 @@ public class ListAdsDao implements Ads {
     }
 
     @Override
+
+    public List<Ad> findByAdTitle(String title) {
+  return null; }
+
     public List<Ad> byCategory(String categoryName) {
+
         return null;
     }
 
     @Override
+
+    public List<Ad> findByUserId(Long userId) { return null;}
+
     public void delete(Ad ad) {
     }
 
@@ -46,6 +54,7 @@ public class ListAdsDao implements Ads {
 
     @Override
     public Ad fetchAdById(int id) {
+
         return null;
     }
 
